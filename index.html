@@ -6,52 +6,94 @@
     <title>Aakash Lobo - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".close");
+
+  // open fullscreen
+  document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+    });
+  });
+
+  // close button
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  // click outside image closes
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+
+});
+</script>
 <body>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
 <div class="container">
 
 
   <div class="card">
+    <label>
+
     <img src="images/1.jpeg" />
     <h3>Conference</h3>
-    <p>Cabaret Style</p>
+    <p>Cabaret Style</p></label>
   </div>
 
-  <div class="card">
+  <div class="card"><label>
+
     <img src="images/2.jpeg" />
     <h3>Conference</h3>
-    <p>Boardroom Style</p>
+    <p>Boardroom Style</p></label>
   </div>
-  <div class="card">
+  <div class="card"><label>
+
     <img src="images/3.jpeg" />
     <h3>Conference</h3>
-    <p>Cabaret Style</p>
+    <p>Cabaret Style</p></label>
   </div>
-  <div class="card">
+  <div class="card"><label>
+
     <img src="images/4.jpeg" />
     <h3>Conference</h3>
-    <p>Cabaret Style</p>
+    <p>Cabaret Style</p></label>
   </div>
-  <div class="card">
+  <div class="card"><label>
+  
     <img src="images/5.jpeg" />
     <h3>Banqueting</h3>
-    <p>Buffet</p>
+    <p>Buffet</p></label>
   </div>
-  <div class="card">
+  <div class="card"><label>
+
     <img src="images/6.jpeg" />
     <h3>Banqueting</h3>
-    <p>Buffet</p>
+    <p>Buffet</p></label>
   </div>
-  <div class="card">
+  <div class="card"><label>
+ 
     <img src="images/7.jpeg" />
     <h3>Banqueting</h3>
-    <p>Buffet</p>
+    <p>Buffet</p></label>
   </div>
-  <div class="card">
+  <div class="card"><label>
+  
     <img src="images/8.jpeg" />
      <h3>Conference</h3>
-    <p>U-Shape</p>
+    <p>U-Shape</p></label>
   </div>
+</div>
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" src="" />
 </div>
 </body>
 </html>
